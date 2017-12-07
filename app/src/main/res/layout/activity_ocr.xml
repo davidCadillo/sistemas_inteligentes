@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusableInTouchMode="true"
+    tools:context="pe.edu.upao.lectordesuministros.OCRActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:text="OPCIONES"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_ruc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        app:counterMaxLength="11"
+        android:hint="RUC o factura">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/textoMostrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="11"
+            android:maxLines="1"
+            android:layout_marginTop="8dp" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <LinearLayout
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_read"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Leer"
+            android:background="@color/colorAccent"
+            android:textColor="#B3FFFFFF"
+            android:layout_marginRight="8dp"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_find"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Buscar"
+            android:background="@color/colorAccent"
+            android:textColor="#B3FFFFFF"
+            android:textAllCaps="false"
+            android:visibility="gone"
+            />
+    </LinearLayout>
+
+
+    <com.theartofdev.edmodo.cropper.CropImageView xmlns:custom="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/img_picture"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1" />
+
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/menu_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="237dp"
+        android:layout_gravity="bottom|end"
+        fab:menu_animationDelayPerItem="0"
+        fab:menu_colorNormal="@color/colorAccent"
+        fab:menu_colorPressed="#F2AB00"
+        fab:menu_colorRipple="#D99200"
+        fab:menu_labels_hideAnimation="@anim/jump_to_down"
+        fab:menu_labels_showAnimation="@anim/jump_from_down"
+        fab:menu_shadowColor="#444">
+
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/btn_tensor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_camera_enhance_black_24dp"
+            fab:fab_label="Tensor flow" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/btn_teseract"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add_a_photo"
+            fab:fab_label="Teseract" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+
+</LinearLayout>
